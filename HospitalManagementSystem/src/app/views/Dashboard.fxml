@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            fx:controller="app.controllers.DashboardController"
+            prefWidth="600" prefHeight="600" >
+
+    <top>
+        <ToolBar>
+            <Label text="🏥 Hospital Management System" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+            <Region fx:id="spacer" HBox.hgrow="ALWAYS"/>
+            <Button text="Logout" onAction="#handleLogout"/>
+        </ToolBar>
+    </top>
+
+    <left>
+        <VBox spacing="10.0" style="-fx-padding: 20;">
+            <Button text="Patients" onAction="#handlePatients"/>
+            <Button text="Appointments" onAction="#handleAppointments"/>
+            <Button text="Doctors" onAction="#handleDoctors"/>
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="contentArea" style="-fx-padding: 20;">
+            <Label text="Welcome to the Hospital Dashboard!" style="-fx-font-size: 16px;"/>
+        </StackPane>
+    </center>
+</BorderPane>

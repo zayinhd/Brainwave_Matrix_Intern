@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="app.controllers.AppointmentController"
+            prefWidth="800" prefHeight="600">
+
+    <top>
+        <ToolBar>
+            <Label text="Manage Appointments" style="-fx-font-size: 18px;"/>
+            <Pane HBox.hgrow="ALWAYS"/>
+            <Button text="Back" onAction="#handleBack"/>
+        </ToolBar>
+    </top>
+
+    <center>
+        <VBox spacing="15.0" style="-fx-padding: 20;">
+            <HBox spacing="10">
+                <Label text="Patient:"/>
+                <ComboBox fx:id="patientComboBox" promptText="Select Patient"/>
+                
+                <Label text="Doctor:"/>
+                <ComboBox fx:id="doctorComboBox" promptText="Select Doctor"/>
+                
+                <Label text="Date:"/>
+                <DatePicker fx:id="datePicker"/>
+                
+                <Button text="Add Appointment" onAction="#handleAddAppointment"/>
+            </HBox>
+
+            <TableView fx:id="appointmentTable" prefHeight="400">
+                <columns>
+                    <TableColumn fx:id="patientCol" text="Patient" prefWidth="150"/>
+                    <TableColumn fx:id="doctorCol" text="Doctor" prefWidth="150"/>
+                    <TableColumn fx:id="dateCol" text="Date" prefWidth="120"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+</BorderPane>
