@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
 
-<VBox alignment="CENTER" spacing="15.0"
-      xmlns="http://javafx.com/javafx"
-      xmlns:fx="http://javafx.com/fxml"
-      fx:controller="app.controllers.LoginController"
-      prefWidth="400" prefHeight="300" style="-fx-padding: 20;">
-    <Label text="🏥Hospital Management System" style="-fx-font-size: 18px;"/>
-    <TextField fx:id="usernameField" promptText="Username"/>
-    <PasswordField fx:id="passwordField" promptText="Password"/>
-    <Button text="Login" onAction="#handleLogin"/>
-    <Label fx:id="errorLabel" textFill="red"/>
-</VBox>
+<AnchorPane xmlns:fx="http://javafx.com/fxml" fx:controller="app.controllers.LoginController">
+    <children>
+        <VBox spacing="10.0" alignment="CENTER" layoutX="100.0" layoutY="50.0">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+            <Label text="Hospital Management - Login"/>
+            <TextField fx:id="usernameField" promptText="Username"/>
+            <PasswordField fx:id="passwordField" promptText="Password"/>
+            <Button text="Login" onAction="#handleLogin"/>
+            <Label fx:id="errorLabel" style="-fx-text-fill: red;" />
+        </VBox>
+    </children>
+</AnchorPane>

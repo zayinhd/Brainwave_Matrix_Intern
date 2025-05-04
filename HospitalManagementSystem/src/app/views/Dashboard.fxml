@@ -1,32 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
-            fx:controller="app.controllers.DashboardController"
-            prefWidth="600" prefHeight="600" >
-
-    <top>
-        <ToolBar>
-            <Label text="🏥 Hospital Management System" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
-            <Region fx:id="spacer" HBox.hgrow="ALWAYS"/>
-            <Button text="Logout" onAction="#handleLogout"/>
-        </ToolBar>
-    </top>
-
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="app.controllers.DashboardController">
+    <!-- Sidebar -->
     <left>
-        <VBox spacing="10.0" style="-fx-padding: 20;">
-            <Button text="Patients" onAction="#handlePatients"/>
-            <Button text="Appointments" onAction="#handleAppointments"/>
-            <Button text="Doctors" onAction="#handleDoctors"/>
+        <VBox spacing="10.0" style="-fx-background-color: #2C3E50;" prefWidth="200.0" alignment="TOP_LEFT">
+            <padding><Insets top="20" left="10" right="10" bottom="20"/></padding>
+            <Label text="Dashboard" style="-fx-text-fill: white; -fx-font-size: 18px;"/>
+            <Button text="Patients" onAction="#handlePatients" maxWidth="180"/>
+            <Button text="Appointments" onAction="#handleAppointments" maxWidth="180"/>
+            <Button text="EHR" onAction="#handleEHR" maxWidth="180"/>
+            <Button text="Billing" onAction="#handleBilling" maxWidth="180"/>
+            <Button text="Inventory" onAction="#handleInventory" maxWidth="180"/>
+            <Button text="Staff" onAction="#handleStaff" maxWidth="180"/>
         </VBox>
     </left>
 
+    <!-- Main content -->
     <center>
-        <StackPane fx:id="contentArea" style="-fx-padding: 20;">
-            <Label text="Welcome to the Hospital Dashboard!" style="-fx-font-size: 16px;"/>
-        </StackPane>
+        <StackPane fx:id="mainContent" style="-fx-background-color: #ecf0f1;" />
     </center>
 </BorderPane>

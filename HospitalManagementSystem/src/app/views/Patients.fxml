@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="app.controllers.PatientsController"
+      spacing="10" alignment="TOP_LEFT" padding="20">
+    
+    <Label text="Patient Registration" style="-fx-font-size: 20px;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="First Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="firstNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Last Name:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="lastNameField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Gender:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="genderComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Date of Birth:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="dobPicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Contact:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="contactField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Address:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextArea fx:id="addressArea" GridPane.rowIndex="5" GridPane.columnIndex="1" prefRowCount="2"/>
+    </GridPane>
+
+    <Button text="Register Patient" onAction="#registerPatient"/>
+    <Label fx:id="statusLabel" style="-fx-text-fill: green;"/>
+</VBox>

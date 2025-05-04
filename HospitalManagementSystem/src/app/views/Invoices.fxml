@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="app.controllers.InvoicesController"
+      spacing="10" padding="20">
+
+    <Label text="Billing & Invoicing" style="-fx-font-size: 20px;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Appointment ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="appointmentIdField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Amount:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="amountField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Payment Status:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <ComboBox fx:id="paymentStatusComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Invoice Date:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="invoiceDatePicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="10">
+        <Button text="Generate Invoice" onAction="#generateInvoice"/>
+        <Button text="Load Invoice" onAction="#loadInvoice"/>
+    </HBox>
+
+    <Label fx:id="statusLabel" style="-fx-text-fill: green;"/>
+</VBox>

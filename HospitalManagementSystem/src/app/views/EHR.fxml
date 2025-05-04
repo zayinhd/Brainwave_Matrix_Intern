@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="app.controllers.EHRController"
+      spacing="10" padding="20">
+
+    <Label text="Electronic Health Record" style="-fx-font-size: 20px;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Patient ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="patientIdField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Diagnosis:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextArea fx:id="diagnosisArea" prefRowCount="2" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Prescriptions:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextArea fx:id="prescriptionArea" prefRowCount="2" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Allergies:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <TextArea fx:id="allergyArea" prefRowCount="2" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Notes:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextArea fx:id="notesArea" prefRowCount="2" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <HBox spacing="10">
+        <Button text="Save Record" onAction="#saveRecord"/>
+        <Button text="Load Record" onAction="#loadRecord"/>
+    </HBox>
+
+    <Label fx:id="statusLabel" style="-fx-text-fill: green;"/>
+</VBox>
+

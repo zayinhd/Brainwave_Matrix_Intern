@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="app.controllers.AppointmentsController"
+      spacing="10" alignment="TOP_LEFT" padding="20">
+
+    <Label text="Schedule Appointment" style="-fx-font-size: 20px;"/>
+
+    <GridPane hgap="10" vgap="10">
+        <Label text="Patient ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+        <TextField fx:id="patientIdField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+        <Label text="Department:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+        <TextField fx:id="departmentField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+        <Label text="Doctor:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+        <TextField fx:id="doctorField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+        <Label text="Date:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+        <DatePicker fx:id="datePicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+        <Label text="Time (HH:MM):" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+        <TextField fx:id="timeField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+        <Label text="Notes:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+        <TextArea fx:id="notesArea" prefRowCount="2" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+    </GridPane>
+
+    <Button text="Schedule Appointment" onAction="#scheduleAppointment"/>
+    <Label fx:id="statusLabel" style="-fx-text-fill: green;"/>
+</VBox>
