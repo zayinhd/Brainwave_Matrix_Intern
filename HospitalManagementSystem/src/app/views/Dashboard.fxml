@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -7,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="app.controllers.DashboardController">
+<BorderPane fx:id="dashboardPane"  xmlns:fx="http://javafx.com/fxml" fx:controller="app.controllers.DashboardController" style="-fx-padding: 20px;" prefWidth="600.0" prefHeight="600.0"  >
     <!-- Sidebar -->
     <left>
         <VBox spacing="10.0" style="-fx-background-color: #2C3E50;" prefWidth="200.0" alignment="TOP_LEFT">

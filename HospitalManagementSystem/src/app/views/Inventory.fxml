@@ -1,43 +1,44 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.control.Label?>
-
-<?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.geometry.Insets?>
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="app.controllers.InventoryController"
-      spacing="10" padding="20">
+      spacing="20" style="-fx-padding: 20px;" prefWidth="400.0" prefHeight="500.0">
 
-    <Label text="Inventory Management" style="-fx-font-size: 20px;"/>
+    <Label text="Inventory Management" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
 
-    <GridPane hgap="10" vgap="10">
+    <GridPane hgap="15" vgap="15">
+        <columnConstraints>
+            <ColumnConstraints minWidth="120" halignment="RIGHT"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
         <Label text="Item Name:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-        <TextField fx:id="itemNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <TextField fx:id="itemNameField" prefWidth="250" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
         <Label text="Quantity:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-        <TextField fx:id="quantityField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <TextField fx:id="quantityField" prefWidth="250" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
         <Label text="Price:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-        <TextField fx:id="priceField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <TextField fx:id="priceField" prefWidth="250" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
         <Label text="Supplier:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-        <TextField fx:id="supplierField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <TextField fx:id="supplierField" prefWidth="250" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
 
         <Label text="Restock Date:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
-        <DatePicker fx:id="restockDatePicker" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        <DatePicker fx:id="restockDatePicker" prefWidth="250" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
     </GridPane>
 
-    <HBox spacing="10">
-        <Button text="Add Item" onAction="#addItem"/>
-        <Button text="Update Inventory" onAction="#updateInventory"/>
-        <Button text="Load Item" onAction="#loadItem"/>
+    <HBox spacing="15">
+        <Button text="Add Item" onAction="#addItem" prefWidth="120"/>
+        <Button text="Update Inventory" onAction="#updateInventory" prefWidth="120"/>
+        <Button text="Load Item" onAction="#loadItem" prefWidth="120"/>
     </HBox>
 
     <Label fx:id="statusLabel" style="-fx-text-fill: green;"/>

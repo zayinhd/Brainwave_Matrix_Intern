@@ -1,36 +1,37 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.geometry.Insets?>
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="app.controllers.InvoicesController"
-      spacing="10" padding="20">
+      spacing="20" style="-fx-padding: 20px;" prefWidth="400.0" prefHeight="500.0">
 
-    <Label text="Billing & Invoicing" style="-fx-font-size: 20px;"/>
+    <Label text="Billing & Invoicing" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
 
-    <GridPane hgap="10" vgap="10">
+    <GridPane hgap="15" vgap="15">
+        <columnConstraints>
+            <ColumnConstraints minWidth="120" halignment="RIGHT"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
         <Label text="Appointment ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-        <TextField fx:id="appointmentIdField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <TextField fx:id="appointmentIdField" prefWidth="250" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
         <Label text="Amount:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-        <TextField fx:id="amountField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <TextField fx:id="amountField" prefWidth="250" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
         <Label text="Payment Status:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-        <ComboBox fx:id="paymentStatusComboBox" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <ComboBox fx:id="paymentStatusComboBox" prefWidth="250" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
         <Label text="Invoice Date:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-        <DatePicker fx:id="invoiceDatePicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <DatePicker fx:id="invoiceDatePicker" prefWidth="250" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
     </GridPane>
 
-    <HBox spacing="10">
-        <Button text="Generate Invoice" onAction="#generateInvoice"/>
-        <Button text="Load Invoice" onAction="#loadInvoice"/>
+    <HBox spacing="15">
+        <Button text="Generate Invoice" onAction="#generateInvoice" prefWidth="120"/>
+        <Button text="Load Invoice" onAction="#loadInvoice" prefWidth="120"/>
     </HBox>
 
     <Label fx:id="statusLabel" style="-fx-text-fill: green;"/>

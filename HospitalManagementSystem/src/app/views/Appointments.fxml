@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
-
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -10,30 +8,39 @@
 <?import javafx.geometry.Insets?>
 
 <VBox xmlns:fx="http://javafx.com/fxml" fx:controller="app.controllers.AppointmentsController"
-      spacing="10" alignment="TOP_LEFT" padding="20">
+      spacing="20" alignment="TOP_LEFT" style="-fx-padding: 20px;" prefWidth="600.0" prefHeight="600.0">
 
-    <Label text="Schedule Appointment" style="-fx-font-size: 20px;"/>
+    <Label text="Schedule Appointment" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
 
-    <GridPane hgap="10" vgap="10">
+    <GridPane hgap="15" vgap="15">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" minWidth="100"/>
+            <ColumnConstraints hgrow="ALWAYS"/>
+        </columnConstraints>
+
+        <rowConstraints>
+            <RowConstraints minHeight="30"/>
+        </rowConstraints>
+
         <Label text="Patient ID:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
-        <TextField fx:id="patientIdField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+        <TextField fx:id="patientIdField" GridPane.rowIndex="0" GridPane.columnIndex="1" prefWidth="300"/>
 
         <Label text="Department:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-        <TextField fx:id="departmentField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+        <TextField fx:id="departmentField" GridPane.rowIndex="1" GridPane.columnIndex="1" prefWidth="300"/>
 
         <Label text="Doctor:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-        <TextField fx:id="doctorField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        <TextField fx:id="doctorField" GridPane.rowIndex="2" GridPane.columnIndex="1" prefWidth="300"/>
 
         <Label text="Date:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
-        <DatePicker fx:id="datePicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+        <DatePicker fx:id="datePicker" GridPane.rowIndex="3" GridPane.columnIndex="1" prefWidth="300"/>
 
         <Label text="Time (HH:MM):" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
-        <TextField fx:id="timeField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+        <TextField fx:id="timeField" GridPane.rowIndex="4" GridPane.columnIndex="1" prefWidth="300"/>
 
         <Label text="Notes:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
-        <TextArea fx:id="notesArea" prefRowCount="2" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+        <TextArea fx:id="notesArea" prefRowCount="3" prefWidth="300" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
     </GridPane>
 
-    <Button text="Schedule Appointment" onAction="#scheduleAppointment"/>
+    <Button text="Schedule Appointment" onAction="#scheduleAppointment" prefWidth="200"/>
     <Label fx:id="statusLabel" style="-fx-text-fill: green;"/>
 </VBox>

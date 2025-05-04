@@ -1,15 +1,15 @@
 package app.controllers;
 
-
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.StackPane;
 import javafx.scene.Node;
+import javafx.scene.layout.BorderPane;
 
 public class DashboardController {
 
     @FXML
-    private StackPane mainContent;
+    private BorderPane dashboardPane;
 
     @FXML
     private void handlePatients() {
@@ -43,8 +43,8 @@ public class DashboardController {
 
     private void loadUI(String fxml) {
         try {
-            Node node = FXMLLoader.load(getClass().getResource("/src/app/views/" + fxml));
-            mainContent.getChildren().setAll(node);
+            Node node = FXMLLoader.load(getClass().getResource("/app/views/" + fxml));  // Fixed path
+            dashboardPane.getChildren().setAll(node);
         } catch (Exception e) {
             e.printStackTrace();
         }

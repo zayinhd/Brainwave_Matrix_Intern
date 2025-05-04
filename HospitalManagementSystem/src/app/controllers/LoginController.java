@@ -48,7 +48,7 @@ public class LoginController {
             }
         } catch (Exception e) {
             e.printStackTrace();
-            errorLabel.setText("Database error");
+            errorLabel.setText("Database error"  + e.getMessage());
         }
     }
 }
